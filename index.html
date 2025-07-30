@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empanadas Pino y Mas | Delicias Criollas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/schedule.css">
+    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado -->
+        <header>
+            <h1 class="logo">Empanadas Pino y Mas</h1>
+        </header>
+        
+        <!-- Horario -->
+        <section id="horario">
+            <h2>Horario de Atención</h2>
+            <div class="schedule-grid">
+                <div class="schedule-card">
+                    <h3>Jueves a Martes</h3>
+                    <p>6:00 AM - 9:00 PM</p>
+                </div>
+                <div class="schedule-card">
+                    <h3>Domingo</h3>
+                    <p>5:00 PM - 9:00 PM</p>
+                </div>
+                <div class="schedule-card">
+                    <h3>Miércoles</h3>
+                    <p>Cerrado</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Menú -->
+        <section id="menu">
+            <h2>Nuestro Menú</h2>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="empanadas">Empanadas</button>
+                <button class="category-btn" data-category="antojos">Antojos</button>
+                <button class="category-btn" data-category="patacones">Patacones</button>
+            </div>
+            
+            <div class="menu-items">
+                <!-- Empanadas -->
+                <div class="menu-category active" id="empanadas">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Empanada de Queso</h3>
+                        </div>
+                        <div class="item-body">
+                            <p>Deliciosa masa rellena de queso fundido</p>
+                            <p class="item-description">Sola, arreglada o con papas</p>
+                            <p class="item-price">₡1,250 - ₡1,750 - ₡2,300</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Empanada de Carne Mechada</h3>
+                        </div>
+                        <div class="item-body">
+                            <p>Carne deshilachada con especias criollas</p>
+                            <p class="item-description">Sola, arreglada o con papas</p>
+                            <p class="item-price">₡1,250  - ₡1,750   - ₡2,300</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Empanada de Chicharrón</h3>
+                        </div>
+                        <div class="item-body">
+                            <p>Chicharrón de cerdo crujiente y sabroso</p>
+                            <p class="item-description">Sola, arreglada o con papas</p>
+                            <p class="item-price">₡1,250 - ₡1,750 - ₡2,300</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Empanada de Frijol y Queso</h3>
+                        </div>
+                        <div class="item-body">
+                            <p>Combinación perfecta de frijoles y queso</p>
+                            <p class="item-description">Sola, arreglada o con papas</p>
+                            <p class="item-price">₡1,250 - ₡1,750 - ₡2,300</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Antojos -->
+                <div class="menu-category" id="antojos">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Taco Grande</h3>
+                        </div>
+                        <div class="item-body">
+                            <p>Tortilla crujiente con carne, vegetales y salsas</p>
+                            <p class="item-price">₡2,000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Nachos Supremos</h3>
+                        </div>
+                        <div class="item-body">
+                            <p>Tortillas chips con carne, queso, guacamole y sour cream</p>
+                            <p class="item-price">₡3,000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Hamburguesa</h3>
+                        </div>
+                        <div class="item-body">
+                            <p>Jugosa hamburguesa con papas fritas</p>
+                            <p class="item-price">₡2,500</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Pescado Empanizado</h3>
+                        </div>
+                        <div class="item-body">
+                            <p>Filete de pescado empanizado con papas y ensalada</p>
+                            <p class="item-price">₡4,000</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Patacones -->
+                <div class="menu-category" id="patacones">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Canasta de Patacón</h3>
+                        </div>
+                        <div class="item-body">
+                            <p>Patacón relleno con carne mechada o chicharrón</p>
+                            <p class="item-price">₡2,500</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Patacón con Popas</h3>
+                        </div>
+                        <div class="item-body">
+                            <p>Patacón con carne y papas fritas</p>
+                            <p class="item-price">₡3,000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3>Patacón Especial</h3>
+                        </div>
+                        <div class="item-body">
+                            <p>Patacón con carne, queso, frijoles y aguacate</p>
+                            <p class="item-price">₡3,500</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contacto -->
+        <section id="contacto">
+            <h2>Contacto y Ubicación</h2>
+            <div class="contact-info">
+                <p>Realizamos entregas a domicilio</p>
+                <a href="tel:63853513" class="phone">Pedidos: 6385-3513</a>
+            </div>
+            <div class="location">
+                <p>500M SUR DE LA PARRILLITA DE PEPE, SAN JOAQUIN DE FLORES</p>
+            </div>
+        </section>
+        
+        <!-- Pie de página -->
+        <footer>
+            <p>© 2025 Empanadas Pino y Mas | Delicias Criollas</p>
+        </footer>
+    </div>
+    
+    <script src="scripts/main.js"></script>
+</body>
+</html>
