@@ -2,26 +2,27 @@
     text-align: center;
     font-size: 1.2rem;
     margin: 20px 0;
+    color: var(--dark);
 }
 
 .phone {
     display: inline-block;
     background: var(--success);
-    color: white;
+    color: #FFF;
     padding: 12px 25px;
     border-radius: 50px;
     font-weight: 600;
-    margin-top: 15px;
     text-decoration: none;
+    margin-top: 15px;
     transition: all 0.3s ease;
 }
-
 .phone:hover {
-    background: #2ecc71;
+    background: #6FB392;
     transform: scale(1.05);
 }
 
 .location {
     margin: 20px 0;
     font-style: italic;
+    color: var(--dark);
 }

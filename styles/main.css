@@ -1,52 +1,30 @@
 :root {
-    --primary: #e74c3c;
-    --secondary: #f39c12;
-    --accent: #e67e22;
-    --light: #fef9e7;
-    --dark: #2c3e50;
-    --success: #27ae60;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --primary: #007A3D;    /* Verde principal */
+    --secondary: #5C1F1B;  /* Burdeos/marrón */
+    --accent: #8C625F;     /* Marrón claro */
+    --light: #F7F7F2;      /* Fondo claro */
+    --dark: #333333;       /* Texto oscuro */
+    --success: #4CA177;    /* Verde éxito */
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    background-color: var(--light);
     color: var(--dark);
     line-height: 1.6;
     padding-bottom: 40px;
     min-height: 100vh;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-section {
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 15px;
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 h2 {
-    color: var(--accent);
+    color: var(--secondary);
     text-align: center;
     margin-bottom: 25px;
     font-size: 2.2rem;
     position: relative;
     padding-bottom: 10px;
 }
-
-h2:after {
+h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -54,14 +32,6 @@ h2:after {
     transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: var(--secondary);
+    background: var(--primary);
     border-radius: 3px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    color: var(--dark);
-    font-size: 0.9rem;
 }
