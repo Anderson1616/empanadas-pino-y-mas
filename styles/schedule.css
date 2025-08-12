@@ -1,16 +1,26 @@
+/* Grid: en desktop cabe de 2 a 3 columnas */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* móvil */
+  gap: 16px;
+}
+
+/* Tarjeta: menos alto, más aire y legible */
 .schedule-card {
-    background: #FFFFFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-    text-align: center;
+  background: #fff;
+  padding: 16px 18px;           /* antes 20+ */
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.06);
 }
 .schedule-card h3 {
-    color: var(--primary);
-    margin-bottom: 15px;
+  color: var(--primary);
+  margin-bottom: 8px;           /* más compacto */
+  font-size: 1.05rem;
 }
 .schedule-card p {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--dark);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark);
 }

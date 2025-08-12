@@ -1,89 +1,39 @@
-
-@media (max-width: 992px) {
-  h2 {
-    font-size: 2rem;
+/* >= 768px (tablets): 2 columnas de platos y 2 de horarios */
+@media (min-width: 768px) {
+  .menu-items {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 18px;
   }
-  .category-btn {
-    padding: 10px 18px;
+  .schedule-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* <= 768px (tablets) */
-@media (max-width: 768px) {
-  .logo-img {
-    max-height: 64px;
+/* >= 1024px (laptops/desktop): 3 columnas de platos y 3 de horarios */
+@media (min-width: 1024px) {
+  .menu-wrapper {
+    max-width: 1160px;
+  }
+  .menu-items {
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .schedule-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .menu-categories {
-    gap: 10px;
-    flex-wrap: wrap;          /* permite que el 4to botón baje si no cabe */
-    justify-content: center;
-  }
-
+  /* Botones de categoría un pelín más chicos para caber sin “saltar” */
   .category-btn {
     font-size: 0.95rem;
-    padding: 10px 16px;
+    padding: 10px 18px;
   }
 
-  .menu-items {
-    /* tarjetas del menú en 2 columnas cómodas */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-  }
-
-  .schedule-grid {
-    /* horario en 2 columnas */
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-}
-
-/* <= 600px (móviles grandes) */
-@media (max-width: 600px) {
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  .menu-items {
-    /* una sola columna para lectura cómoda */
-    grid-template-columns: 1fr;
-  }
-
-  .schedule-grid {
-    grid-template-columns: 1fr; /* tarjetas de horario apiladas */
-  }
-
+  /* Encabezado y cuerpo del plato aún más contenidos en desktop grandes */
   .item-header {
-    padding: 12px;
+    padding: 10px 14px;
+    font-size: 1rem;
   }
-
   .item-body {
-    padding: 16px;
-  }
-
-  .item-price {
-    font-size: 1.2rem;
-  }
-}
-
-/* <= 480px (móviles chicos) */
-@media (max-width: 480px) {
-  .logo-img {
-    max-height: 56px;
-  }
-
-  .category-btn {
-    font-size: 0.85rem;
-    padding: 8px 14px;
-  }
-
-  /* si no usas gap entre botones, este margen evita que se peguen */
-  .category-btn + .category-btn {
-    margin-left: 6px;
-  }
-
-  .contact-info {
-    font-size: 1.05rem;
+    padding: 12px 14px;
   }
 }
