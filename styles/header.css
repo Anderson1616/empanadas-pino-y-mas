@@ -1,6 +1,9 @@
 header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 30px 0;
+    padding: 18px 0;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(5px);
     border-radius: 0 0 20px 20px;
@@ -20,4 +23,30 @@ header {
     width: auto;
     display: block;
     margin: 0 auto 10px;
+}
+
+.site-logo {
+    max-width: 200px; /* tamaño por defecto ligeramente menor */
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0;
+    transition: transform 180ms ease, filter 180ms ease;
+}
+
+.site-logo:hover {
+    transform: translateY(-3px) scale(1.02);
+    filter: drop-shadow(0 6px 10px rgba(11,122,61,0.08));
+}
+
+@media (max-width: 768px) {
+    .site-logo {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 420px) {
+    .site-logo {
+        max-width: 120px;
+    }
 }

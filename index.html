@@ -20,7 +20,8 @@
     <div class="container">
         <!-- Encabezado -->
         <header>
-            <h1 class="logo">Empanadas Pino y Mas</h1>
+            <img src="assets/logo.png" alt="Empanadas Pino y más" class="site-logo">
+            
         </header>
         
         <!-- Horario -->
@@ -42,139 +43,263 @@
             </div>
         </section>
         
-        <!-- Menú -->
-        <section id="menu">
-            <h2>Nuestro Menú</h2>
-            <div class="menu-categories">
-                <button class="category-btn active" data-category="empanadas">Empanadas</button>
-                <button class="category-btn" data-category="antojos">Antojos</button>
-                <button class="category-btn" data-category="patacones">Patacones</button>
-            </div>
-            
-            <div class="menu-items">
-                <!-- Empanadas -->
-                <div class="menu-category active" id="empanadas">
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <h3>Empanada de Queso</h3>
+                <!-- Menú -->
+        <section id="menu" class="menu-wrapper">
+        <h2>Nuestro Menú</h2>
+
+        <!-- Botones de categorías -->
+        <div class="menu-categories">
+            <button class="category-btn active" data-category="empanadas">Empanadas</button>
+            <button class="category-btn" data-category="antojos">Antojos</button>
+            <button class="category-btn" data-category="patacones">Canasta de Patacón</button>
+            <button class="category-btn" data-category="pollo">Pollo Frito</button>
+            <button class="category-btn" data-category="desayuno">Desayunos</button>
+            <button class="category-btn" data-category="ninos">Menú Niños</button>
+            <button class="category-btn" data-category="bebidas">Bebidas</button>
+        </div>
+
+        <div class="menu-items">
+            <!-- ===== EMPANADAS ===== -->
+            <div class="menu-category active" id="empanadas">
+                <h3>🥟 Empanadas</h3>
+                <div class="section-divider"></div>
+
+                <div class="empanadas-grid">
+                    <div class="empanadas-types">
+                        <div class="type-card">
+                            <div class="type-name">Empanada Sola</div>
+                            <div class="type-price">₡1,250</div>
                         </div>
-                        <div class="item-body">
-                            <p>Deliciosa masa rellena de queso fundido</p>
-                            <p class="item-description">Sola, arreglada o con papas</p>
-                            <p class="item-price">₡1,250 - ₡1,750 - ₡2,300</p>
+
+                        <div class="type-card">
+                            <div class="type-name">Empanada Arreglada</div>
+                            <div class="type-price">₡1,750</div>
                         </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <h3>Empanada de Carne Mechada</h3>
-                        </div>
-                        <div class="item-body">
-                            <p>Carne deshilachada con especias criollas</p>
-                            <p class="item-description">Sola, arreglada o con papas</p>
-                            <p class="item-price">₡1,250  - ₡1,750   - ₡2,300</p>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <h3>Empanada de Chicharrón</h3>
-                        </div>
-                        <div class="item-body">
-                            <p>Chicharrón de cerdo crujiente y sabroso</p>
-                            <p class="item-description">Sola, arreglada o con papas</p>
-                            <p class="item-price">₡1,250 - ₡1,750 - ₡2,300</p>
+
+                        <div class="type-card">
+                            <div class="type-name">Empanada Arreglada con Papas</div>
+                            <div class="type-price">₡2,300</div>
                         </div>
                     </div>
-                    
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <h3>Empanada de Frijol y Queso</h3>
-                        </div>
-                        <div class="item-body">
-                            <p>Combinación perfecta de frijoles y queso</p>
-                            <p class="item-description">Sola, arreglada o con papas</p>
-                            <p class="item-price">₡1,250 - ₡1,750 - ₡2,300</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Antojos -->
-                <div class="menu-category" id="antojos">
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <h3>Taco Grande</h3>
-                        </div>
-                        <div class="item-body">
-                            <p>Tortilla crujiente con carne, vegetales y salsas</p>
-                            <p class="item-price">₡2,000</p>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <h3>Nachos Supremos</h3>
-                        </div>
-                        <div class="item-body">
-                            <p>Tortillas chips con carne, queso, guacamole y sour cream</p>
-                            <p class="item-price">₡3,000</p>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <h3>Hamburguesa</h3>
-                        </div>
-                        <div class="item-body">
-                            <p>Jugosa hamburguesa con papas fritas</p>
-                            <p class="item-price">₡2,500</p>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <h3>Pescado Empanizado</h3>
-                        </div>
-                        <div class="item-body">
-                            <p>Filete de pescado empanizado con papas y ensalada</p>
-                            <p class="item-price">₡4,000</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Patacones -->
-                <div class="menu-category" id="patacones">
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <h3>Canasta de Patacón</h3>
-                        </div>
-                        <div class="item-body">
-                            <p>Patacón relleno con carne mechada o chicharrón</p>
-                            <p class="item-price">₡2,500</p>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <h3>Patacón con Popas</h3>
-                        </div>
-                        <div class="item-body">
-                            <p>Patacón con carne y papas fritas</p>
-                            <p class="item-price">₡3,000</p>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-item">
-                        <div class="item-header">
-                            <h3>Patacón Especial</h3>
-                        </div>
-                        <div class="item-body">
-                            <p>Patacón con carne, queso, frijoles y aguacate</p>
-                            <p class="item-price">₡3,500</p>
-                        </div>
+
+                    <div class="empanadas-flavors">
+                        <h4>Sabores disponibles:</h4>
+                        <div class="section-divider"></div>
+                        <ul class="flavors-list">
+                            <li>Queso</li>
+                            <li>Frijol</li>
+                            <li>Carne Mechada</li>
+                            <li>Pollo</li>
+                            <li>Frijol con Queso</li>
+                            <li>Picadillo de papa</li>
+                            <li>Pinto</li>
+                            <li>Chicharrón</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+
+            <!-- ===== ANTOJOS ===== -->
+            <div class="menu-category" id="antojos">
+                <h3>🍔 Antojos</h3>
+                <div class="section-divider"></div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Taco Grande</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡2,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Taco Grande con Papas</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡2,500</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Nachos Supremos</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡3,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Papas Supremas</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡3,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Nacho Papas Supremas</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡3,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Salchi Papas</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡3,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Hamburguesa</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡2,500</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Hamburguesa con Papas</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡3,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Pescado Empanizado</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡4,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Orden de Papas Pequeñas</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡1,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Orden de Papas Grandes</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡1,500</span></div>
+                </div>
+            </div>
+
+            <!-- ===== PATACONES ===== -->
+            <div class="menu-category" id="patacones">
+                <h3>🍌 Canasta de Patacón</h3>
+                <div class="section-divider"></div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Orden de Patacón</h3></div>
+                    <div class="item-body"><p>(Relleno a escoger: carne mechada o chicharrón)</p><span class="item-price">₡2,500</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Orden de Patacón con Papas</h3></div>
+                    <div class="item-body"><p>(Relleno a escoger: carne mechada o chicharrón)</p><span class="item-price">₡3,000</span></div>
+                </div>
+            </div>
+
+            <!-- ===== POLLO FRITO ===== -->
+            <div class="menu-category" id="pollo">
+                <h3>🍗 Pollo Frito</h3>
+                <div class="section-divider"></div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Nuggets</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡3,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Porción de Pechuga</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡2,300</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Porción de Muslo</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡2,000</span></div>
+                </div>
+            </div>
+
+            <!-- ===== DESAYUNOS ===== -->
+            <div class="menu-category" id="desayuno">
+                <h3>🍳 Desayunos</h3>
+                <div class="section-divider"></div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Gallo Pinto</h3></div>
+                    <div class="item-body"><p>Incluye pinto, huevo, plátano maduro y pan</p><span class="item-price">₡1,500</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Extras</h3></div>
+                    <div class="item-body"><p>Natilla, Salchichón, Queso, Carne Mechada</p><span class="item-price">₡500 c/u</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Sándwich</h3></div>
+                    <div class="item-body"><p>Rellenos: carne mechada, pollo, jamón y queso</p><span class="item-price">₡1,500</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Tortilla Aliñada</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡1,000</span></div>
+                </div>
+            </div>
+
+            <!-- ===== MENÚ NIÑOS ===== -->
+            <div class="menu-category" id="ninos">
+                <h3>👶 Menú Niños</h3>
+                <div class="section-divider"></div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Empanadita con Papas</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡2,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Hamburguesita con Papas</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡2,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Taquito con Papas</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡2,000</span></div>
+                </div>
+            </div>
+
+            <!-- ===== BEBIDAS ===== -->
+            <div class="menu-category" id="bebidas">
+                <h3>🥤 Bebidas</h3>
+                <div class="section-divider"></div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Refrescos Naturales en Agua</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡1,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Refrescos Naturales en Leche</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡1,500</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Refresco Gaseosa 355 ml</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡750</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Refresco Gaseosa 600 ml</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡1,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Refresco Gaseosa 3L</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡2,500</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Agua</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡1,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Té Frío</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡800</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Café Frío</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡1,350</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Café Caliente</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡1,000</span></div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-header"><h3>Chocolate Caliente</h3></div>
+                    <div class="item-body"><p></p><span class="item-price">₡1,250</span></div>
+                </div>
+            </div>
+        </div>
         </section>
         
         <!-- Contacto -->
@@ -184,15 +309,47 @@
                 <p>Realizamos entregas a domicilio</p>
                 <a href="tel:63853513" class="phone">Pedidos: 6385-3513</a>
             </div>
+        </section>
+        
+        <!-- Reemplazar bloque de ubicación + footer por un layout lateral con mapa cuadrado -->
+        <!-- Eliminado: sección de ubicación a pantalla completa -->
+        <!--
+        <section id="ubicacion" class="location-section">
+          ...
+        </section>
+        -->
+        
+        <!-- Footer info con mapa cuadrado a la derecha -->
+        <div class="footer-info">
+          <div class="footer-left">
+            <p>500M SUR DE LA PARRILLITA DE PEPE, SAN JOAQUIN DE FLORES</p>
+            <p class="copyright">© 2025 Empanadas Pino y Mas</p>
+          </div>
+          <div class="footer-right">
+            <iframe
+              class="map-embed-square"
+              src="https://www.google.com/maps?q=2R2W%2B7FG%20Heredia&z=17&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              aria-label="Mapa de ubicación del local"
+            ></iframe>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=2R2W%2B7FG%20Heredia" target="_blank" rel="noopener">
+              Abrir en Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Eliminados los bloques separados de ubicación y copyright -->
+        <!--
             <div class="location">
                 <p>500M SUR DE LA PARRILLITA DE PEPE, SAN JOAQUIN DE FLORES</p>
             </div>
-        </section>
-        
-        <!-- Pie de página -->
-        <footer>
-            <p>© 2025 Empanadas Pino y Mas</p>
-        </footer>
+            <footer>
+                <p>© 2025 Empanadas Pino y Mas</p>
+            </footer>
+        -->
+
     </div>
     
     <script src="scripts/main.js"></script>

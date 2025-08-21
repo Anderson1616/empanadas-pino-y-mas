@@ -1,4 +1,4 @@
-/* Contenedor centrado y con ancho máximo para desktop */
+/* Contenedor centrado y con ancho máximo para desktop */ 
 .menu-wrapper {
   max-width: 1160px;
   margin: 0 auto;
@@ -20,62 +20,462 @@
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
 }
 
-/* Grid de items: antes “columna única” -> ahora carta compacta en 2-3 columnas en desktop */
-.menu-items {
+.category-btn {
+  border: 1px solid #bdbdbd;
+  background: #f4f4f4;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.category-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* Mostrar solo la categoría activa */
+.menu-category {
+  display: none;
+}
+.menu-category.active {
   display: grid;
-  grid-template-columns: 1fr;             /* móvil por defecto */
+  grid-template-columns: 1fr;   /* móvil */
   gap: 18px;
 }
 
-/* Tarjeta del plato: más pequeña, con borde sutil y menos padding */
+/* Que los títulos y separadores ocupen todo el ancho del grid */
+.menu-category h3,
+.menu-category .section-divider {
+  grid-column: 1 / -1;
+}
+
+
+/* Columnas en pantallas más grandes */
+@media (min-width: 640px) {
+  .menu-category.active { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .menu-category.active { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Tarjeta base: igual al estilo de Empanadas (gradiente, borde y sombra verdes) */
 .menu-item {
-  background: #fff;
-  border: 1px solid rgba(0,0,0,0.06);
+  background: linear-gradient(180deg, #ffffff, #fbfbfb);
+  border: 1px solid rgba(11, 122, 61, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(11, 122, 61, 0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+  padding: 0;
+  text-align: center;
+  display: flex;              /* asegura estructura vertical consistente */
+  flex-direction: column;
+  justify-content: center;  /* centra verticalmente el contenido */
+  min-height: auto;         /* antes podía estar en 160px; ahora se ajusta al contenido */
+}
+
+.menu-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(11, 122, 61, 0.10);
+}
+
+/* Unificar look en todas las categorías (coincide con .menu-item) */
+.menu-category .menu-item {
+  background: linear-gradient(180deg, #ffffff, #fbfbfb);
+  border-radius: 10px;
+  border: 1px solid rgba(11, 122, 61, 0.08);
+  box-shadow: 0 6px 10px rgba(11, 122, 61, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* centra verticalmente el contenido */
+  padding: 0;
+  text-align: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  min-height: auto;         /* antes podía estar en 160px; ahora se ajusta al contenido */
+}
+
+.menu-category .menu-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(11, 122, 61, 0.10);
+}
+
+/* Quitar separación vertical entre bloques internos */
+.menu-item .item-body {
+  gap: 0 !important;           /* antes podía ser 8px/2px */
+  padding-top: 0 !important;   /* evita espacio entre header y body */
+}
+
+/* Precio pegado al contenido anterior */
+.menu-item .item-body .item-price {
+  margin-top: 0 !important;
+}
+
+/* Normalizar márgenes de textos comunes dentro de las tarjetas */
+.menu-item p,
+.menu-item h3,
+.menu-item h4,
+.menu-item h5,
+.menu-item strong {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.15;
+}
+
+/* Tipografía igual que Empanadas: nombre y precio en verde y destacados */
+.item-header {
+  background: transparent;
+  color: #0b7a3d;
+  text-align: center;
+  border-bottom: none;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 6px 8px 0;  /* antes: 10px 8px; */
+  margin: 0;
+}
+
+.item-body {
+  padding: 0 8px 8px;  /* antes: 8px 10px; */
+  color: #2b2b2b;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;            /* antes: 8px; reduce separación entre elementos */
+}
+
+.item-body > * {
+  margin: 0;
+  line-height: 1.15;   /* compacidad manteniendo legibilidad */
+}
+
+/* Precio: sin margen extra y estilo consistente */
+.menu-item .item-price {
+  color: #000 !important;
+}
+
+/* Dejar que el grid maneje el ancho y el gap en TODAS las categorías */
+.menu-items .menu-category .menu-item {
+  width: auto !important;     /* evitar el ancho fijo por columnas inline */
+  margin: 0 !important;       /* el espacio lo gestiona 'gap' del grid */
+  box-sizing: border-box;
+  display: flex;              /* consistente con las tarjetas base */
+}
+
+/* Empanadas (.type-card): mismo ajuste de compacidad nombre/precio */
+.type-card {
+  padding: 8px 10px;    /* mantiene legibilidad sin espacios extra */
+  gap: 0 !important;    /* sin separación vertical */
+}
+.type-card > * {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.15;
+}
+
+/* Centrar los títulos de cada apartado (Antojos, Canasta de Patacón, etc.) */
+.menu-category > h3 {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* ============  EMPANADAS (centrado sobre la línea verde)  ============ */
+
+/* El propio contenedor de la categoría Empanadas funciona como centrador */
+.menu-category#empanadas.active {
+  grid-column: 1 / -1;          /* ocupar todo el ancho del grid padre */
+  display: flex;                 /* centramos todo su contenido en eje vertical del contenedor */
+  flex-direction: column;
+  align-items: center;           /* <— centra H3, separador, grid interno justo sobre el eje */
+  text-align: center;
+}
+
+.menu-category#empanadas > h3 { text-align: center; }
+
+/* Bloque interno de Empanadas */
+.empanadas-grid {
+  display: grid;
+  grid-template-columns: 1fr;    /* opciones arriba, sabores debajo */
+  gap: 14px;
+  width: 100%;
+  max-width: 760px;              /* ancho contenido */
+  margin: 0 auto;                /* <— asegura centrado horizontal */
+  justify-self: center;          /* por si lo necesita como ítem de grid */
+}
+
+/* Las tres tarjetas en una fila, centradas */
+.empanadas-types {
+  display: grid;
+  grid-template-columns: 1fr;   /* móvil */
+  gap: 18px;                    /* consistente con el grid general */
+  width: 100%;
+}
+
+/* columnas responsivas como el resto del menú */
+@media (min-width: 640px) {
+  .empanadas-types { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .empanadas-types { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Tarjetas de Empanadas con el mismo look de las demás (.menu-item) */
+.type-card {
+  background: linear-gradient(180deg, #ffffff, #fbfbfb);
+  border: 1px solid rgba(11,122,61,0.08);
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(11,122,61,0.06);
+
+  /* compactar contenido: quitar espacios extra y reducir altura */
+  padding: 8px 10px;          /* antes: 0; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;    /* nombre y precio centrados verticalmente */
+  gap: 2px;                   /* casi sin separación entre nombre y precio */
+  min-height: auto;           /* antes: 160px; permite que la tarjeta se ajuste al contenido */
+
+  margin: 0;
+  text-align: center;
+  transition: transform .18s ease, box-shadow .18s ease;
+  max-width: none;
+}
+
+.type-card > * {
+  margin: 0;                  /* eliminar márgenes de elementos internos */
+  line-height: 1.15;          /* línea más compacta para nombre y precio */
+}
+
+.type-card > :first-child {
+  color: #0b7a3d;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0;                 /* antes: 10px 8px 4px; */
+}
+
+.type-card > :last-child {
+  color: #000 !important;
+  font-weight: 800;
+  font-size: 1.05rem;
+  padding: 0;                 /* antes: 4px 8px 10px; */
+}
+
+/* Opcional: en pantallas muy pequeñas mantenemos legibilidad */
+@media (max-width: 420px) {
+  .type-card {
+    padding: 8px 10px;
+    gap: 2px;
+    min-height: auto;
+  }
+}
+
+/* Lista de sabores centrada como bloque, con texto alineado a la izquierda */
+.empanadas-flavors {
+  display: flex;               /* asegurar contexto flex */
+  justify-content: center;     /* <— centra el bloque completo bajo la línea verde */
+  padding: 6px 10px 0 10px;
+  background: transparent;
+}
+
+/* Limitar estilos de la lista de sabores solo a Empanadas */
+.menu-category#empanadas .flavors-list {
+  color: #000;
+  display: inline-block;       /* mantiene el bloque ceñido para centrarlo */
+  text-align: left;            /* bullets a la izquierda */
+  margin: 6px 0 18px 0;
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style: disc;
+}
+
+/* Fix: centrar el bloque de sabores y alinear bullets en Empanadas */
+.menu-category#empanadas .empanadas-flavors {
+  flex-direction: column;    /* título arriba y lista debajo */
+  align-items: center;       /* centra ambos elementos */
+  justify-content: center;   /* mantiene el bloque centrado */
+  padding-top: 6px;
+}
+
+.menu-category#empanadas .flavors-list {
+  margin: 6px auto 18px;      /* centrar horizontalmente */
+  max-width: 460px;           /* limitar ancho para 2 columnas compactas */
+  padding-left: 18px;         /* bullets visibles y alineados */
+  list-style-position: outside;
+  text-align: left;           /* texto a la izquierda dentro del bloque centrado */
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
+@media (max-width: 420px) {
+  .menu-category#empanadas .flavors-list {
+    max-width: 320px;
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    padding-left: 16px;
+  }
+}
+
+/* Make 'Sabores disponibles:' appear green in Empanadas section */
+.menu-category#empanadas .flavors-title,
+.menu-category#empanadas .empanadas-flavors .flavors-title,
+.menu-category#empanadas .empanadas-flavors .title,
+.menu-category#empanadas .empanadas-flavors h4,
+.menu-category#empanadas .empanadas-flavors strong {
+  color: #0b7a3d; /* green matching other accents */
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ==================  Resto de tarjetas del menú  ================== */
+/* (Sin interferir con Empanadas: ancho por defecto para otros listados) */
+.menu-items .menu-category {
+  margin-bottom: 18px;
+}
+.menu-items .menu-category .menu-item {
+  width: calc(33.333% - 16px);
+  margin: 8px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Separadores visuales */
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background: #0b7a3d;
+  margin: 12px auto 22px auto;
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .empanadas-types { gap: 12px; }
+}
+@media (max-width: 640px) {
+  .empanadas-types { gap: 10px; }
+  .type-card { max-width: none; } /* antes: max-width: 180px; */
+}
+@media (max-width: 420px) {
+  .flavors-list { columns: 1; -webkit-columns: 1; -moz-columns: 1; }
+}
+
+/* Sección de ubicación (mapa) */
+.location-section {
+  max-width: 1160px;
+  margin: 32px auto 40px;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.location-section .location-info {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  color: #2b2b2b;
+}
+
+.location-section .map-wrap {
+  margin-top: 8px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.menu-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 }
 
-/* Encabezado del plato: más delgado para que no “pese” tanto en desktop */
-.item-header {
-  background: var(--primary);
-  color: #fff;
-  padding: 12px 16px;       /* antes era mayor */
-  text-align: center;
+.location-section .map-embed {
+  width: 100%;
+  height: 380px;   /* alto cómodo en desktop */
+  border: 0;
+}
+
+.location-section .map-link {
+  margin-top: 10px;
+}
+
+.location-section .map-link a {
+  color: var(--primary, #0b7a3d);
   font-weight: 700;
-  font-size: 1.05rem;       /* más compacto */
+  text-decoration: none;
+}
+.location-section .map-link a:hover {
+  text-decoration: underline;
 }
 
-/* Cuerpo del plato: menor padding y mejor lectura */
-.item-body {
-  padding: 14px 16px;       /* antes 20px */
+@media (max-width: 640px) {
+  .location-section .map-embed { height: 320px; }
 }
 
-.item-description {
-  color: #5d5d5d;
-  font-size: 0.95rem;
+/* Footer con mapa cuadrado a la derecha */
+.footer-info {
+  max-width: 1160px;
+  margin: 24px auto 40px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-left {
+  flex: 1 1 auto;
+}
+
+.footer-left p {
+  margin: 0 0 6px 0;
+  color: #2b2b2b;
+  font-weight: 600;
+}
+
+.footer-left .copyright {
+  color: #666;
+  font-weight: 500;
   margin-top: 6px;
 }
 
-.item-price {
-  color: var(--success);
-  font-weight: 700;
-  font-size: 1.15rem;       /* un poco más chico para cartas compactas */
-  margin-top: 8px;
+.footer-right {
+  flex: 0 0 auto;
+  width: 260px;             /* tamaño compacto y estético */
+}
+
+.map-embed-square {
+  width: 100%;
+  aspect-ratio: 1 / 1;      /* mapa cuadrado */
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  overflow: hidden;
   display: block;
 }
 
-/* Separadores visuales por sección (si decides mostrar varias categorías a la vez) */
-.section-divider {
-  margin: 34px auto 20px;
-  height: 2px;
-  width: min(140px, 30%);
-  background: var(--primary);
-  border-radius: 2px;
-  opacity: .8;
+.footer-info .map-link {
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+  color: var(--primary, #0b7a3d);
+  font-weight: 700;
+  text-decoration: none;
+}
+.footer-info .map-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive: apilar en móvil y centrar mapa */
+@media (max-width: 640px) {
+  .footer-info {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .footer-right {
+    width: 220px;           /* un poco más pequeño en móvil */
+    margin: 0 auto;
+  }
+  .footer-left p { text-align: center; }
 }

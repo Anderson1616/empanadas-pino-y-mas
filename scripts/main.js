@@ -23,4 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById(category).classList.add('active');
         });
     });
+
+    // Mostrar la primera categoría al cargar
+    if (categoryBtns.length > 0) {
+        categoryBtns[0].click();
+    }
 });
